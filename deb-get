@@ -2363,6 +2363,17 @@ function deb_appimagelauncher() {
     fi
 }
 
+function deb_boostNote() {
+    get_github_releases "https://github.com/BoostIO/BoostNote-App/releases/latest"
+    if [ "${ACTION}" != "prettylist" ]; then
+        URL=$(grep "browser_download_url.*.deb" "${CACHE_DIR}/${APP}.json" | cut -d '"' -f4)
+        VERSION_PUBLISHED=""
+    fi
+    PRETTY_NAME="Boost-Note"
+    WEBSITE="https://boostnote.io/"
+    SUMMARY="Boost Note is a document driven project management tool that maximizes remote DevOps team velocity"
+}
+
 # Create an array to track those deb_ functions being loaded by this script
 readonly DEB_GET_APPS=($(declare -F | grep deb_ | sed 's|declare -f deb_||g' | sort))
 
