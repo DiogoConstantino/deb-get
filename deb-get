@@ -2369,7 +2369,7 @@ function deb_boostNote() {
         URL=$(grep "browser_download_url.*.deb" "${CACHE_DIR}/${APP}.json" | cut -d '"' -f4)
         VERSION_PUBLISHED="$(echo "${URL}" | cut -d'/' -f8 | tr -d v)"
     fi
-    PRETTY_NAME="Boost-Note"
+    PRETTY_NAME="Boost Note"
     WEBSITE="https://boostnote.io/"
     SUMMARY="Boost Note is a document driven project management tool that maximizes remote DevOps team velocity"
 }
